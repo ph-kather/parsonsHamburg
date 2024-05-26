@@ -3,7 +3,7 @@
 
 # Parsons Practice
 
-## Parsons 1 (Line Based Grader)
+## Parsons 1 (Meine Aufgabe)
 Re-arrange the blocks below so they print out "Hello World!"
 
 <div id="p1-sortableTrash" class="sortable-code"></div>

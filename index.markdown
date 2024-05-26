@@ -1,9 +1,6 @@
----
+
 # Test
 
-layout: default
-title: Multiple Parson's Problems on One Page
----
 # Parsons Practice
 
 ## Parsons 1 (Line Based Grader)

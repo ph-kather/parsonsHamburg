@@ -48,12 +48,12 @@ Re-arrange the blocks below so they print out "Hello World!"
 ##  Aufgabe 1
 Sortiert die Elemente so, dass alle Einträge der ursprünglichen Liste quadriert werden
 
-<div id="Aufgabe 1: Map-sortableTrash" class="sortable-code"></div> 
-<div id="Aufgabe 1: Map-sortable" class="sortable-code"></div> 
+<div id="Aufgabe1Map-sortableTrash" class="sortable-code"></div> 
+<div id="Aufgabe1Map-sortable" class="sortable-code"></div> 
 <div style="clear:both;"></div> 
 <p> 
-    <input id="Aufgabe 1: Map-feedbackLink" value="Get Feedback" type="button" /> 
-    <input id="Aufgabe 1: Map-newInstanceLink" value="Reset Problem" type="button" /> 
+    <input id="Aufgabe1Map-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="Aufgabe1Map-newInstanceLink" value="Reset Problem" type="button" /> 
 </p> 
 <script type="text/javascript"> 
 (function(){
@@ -63,7 +63,7 @@ Sortiert die Elemente so, dass alle Einträge der ursprünglichen Liste quadrier
     ".toList();\n" +
     ".map(z -> z / 2) #distractor";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "Aufgabe 1: Map-sortable",
+    "sortableId": "Aufgabe1Map-sortable",
     "max_wrong_lines": 10,
     "grader": ParsonsWidget._graders.LineBasedGrader,
     "exec_limit": 2500,
@@ -71,15 +71,15 @@ Sortiert die Elemente so, dass alle Einträge der ursprünglichen Liste quadrier
     "x_indent": 50,
     "lang": "en",
     "show_feedback": true,
-    "trashId": "Aufgabe 1: Map-sortableTrash"
+    "trashId": "Aufgabe1:Map-sortableTrash"
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#Aufgabe 1: Map-newInstanceLink").click(function(event){ 
+  $("#Aufgabe1Map-newInstanceLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.shuffleLines(); 
   }); 
-  $("#Aufgabe 1: Map-feedbackLink").click(function(event){ 
+  $("#Aufgabe1Map-feedbackLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.getFeedback(); 
   }); 

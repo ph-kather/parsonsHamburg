@@ -134,3 +134,94 @@ Sortiert die Elemente so, dass der Code alle Einträge kleiner oder gleich 0 ent
 })(); 
 </script>
 
+## Aufgabe 4
+
+Sortiert die Elemente so, dass der Code das Produkt aller Einträge bestimmt.
+
+<div id="A4-sortableTrash" class="sortable-code"></div> 
+<div id="A4-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="A4-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="A4-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
+(function(){
+  var initial = "int produktAllerZahlen = listeMitZahlen\n" +
+    ".stream()\n" +
+    ".reduce(1, (produkt, z) -&gt; produkt * z);\n" +
+    "  \n" +
+    ".toList(); #distractor\n" +
+    ".reduce(0, (produkt, z) -&gt; produkt * z); #distractor";
+  var parsonsPuzzle = new ParsonsWidget({
+    "sortableId": "A4-sortable",
+    "max_wrong_lines": 10,
+    "grader": ParsonsWidget._graders.LineBasedGrader,
+    "exec_limit": 2500,
+    "can_indent": true,
+    "x_indent": 50,
+    "lang": "en",
+    "show_feedback": true,
+    "trashId": "A4-sortableTrash"
+  });
+  parsonsPuzzle.init(initial);
+  parsonsPuzzle.shuffleLines();
+  $("#A4-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#A4-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
+</script>
+
+## Aufgabe 5
+
+Sortiert die Elemente so, dass der Code alle Einträge quadriert und anschließend aufsummiert.
+
+<div id="A5-sortableTrash" class="sortable-code"></div> 
+<div id="A5-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="A5-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="A5-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
+(function(){
+  var initial = "int quadrataggregiert = listeMitZahlen\n" +
+    "                .stream()\n" +
+    "                .map(z -&gt; z * z)\n" +
+    "                .reduce(0, Integer::sum);\n" +
+    ".toList(); #distractor\n" +
+    ".reduce(1, Integer::sum); #distractor\n" +
+    ".filter(z -&gt; z == z*z) #distractor\n" +
+    ".reduce(0, (produkt, z) -&gt; produkt * z); #distractor";
+  var parsonsPuzzle = new ParsonsWidget({
+    "sortableId": "A5-sortable",
+    "max_wrong_lines": 10,
+    "grader": ParsonsWidget._graders.LineBasedGrader,
+    "exec_limit": 2500,
+    "can_indent": true,
+    "x_indent": 50,
+    "lang": "en",
+    "show_feedback": true,
+    "trashId": "A5-sortableTrash"
+  });
+  parsonsPuzzle.init(initial);
+  parsonsPuzzle.shuffleLines();
+  $("#A5-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#A5-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
+</script>
+
+
+
+

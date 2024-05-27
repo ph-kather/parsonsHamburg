@@ -2,6 +2,7 @@ Mit diesen Aufgaben möchte ich die Grundlegende Syntax von funktionalen Element
 Hierbei geht es nur darum, die richtige Reihenfolge der Codeblöcke zu finden.
 Zieht dafür einfach die Elemente aus dem Aufgabenbereich in den Lösungsbereich und prüft Eure Antwort.
 Beachtet, dass meist nicht alle Elemente notwendig sind.
+Zudem ist es wichtig, dass alle Elemente linksbündig sind!
 
 ##  Aufgabe 1
 Sortiert die Elemente so, dass alle Einträge der ursprünglichen Liste quadriert werden.
@@ -26,7 +27,7 @@ Sortiert die Elemente so, dass alle Einträge der ursprünglichen Liste quadrier
     "max_wrong_lines": 10,
     "grader": ParsonsWidget._graders.LineBasedGrader,
     "exec_limit": 2500,
-    "can_indent": false,
+    "can_indent": true,
     "x_indent": 50,
     "lang": "en",
     "show_feedback": true,
@@ -60,9 +61,9 @@ Sortiert die Elemente so, dass alle Einträge entfernt werden, die größer oder
 <script type="text/javascript"> 
 (function(){
   var initial = "List&lt;Integer&gt; neueListeMitZahlen2 = listeMitZahlen\n" +
-    "  .stream()\n" +
-    "  .filter(z -&gt; z &lt; 100)\n" +
-    "  .toList();\n" +
+    ".stream()\n" +
+    ".filter(z -&gt; z &lt; 100)\n" +
+    ".toList();\n" +
     ".filter(z -&gt; z + 100) #distractor\n" +
     ".filter(z -&gt; z &gt;= 100) #distractor";
   var parsonsPuzzle = new ParsonsWidget({
@@ -191,9 +192,9 @@ Sortiert die Elemente so, dass der Code alle Einträge quadriert und anschließe
 <script type="text/javascript"> 
 (function(){
   var initial = "int quadrataggregiert = listeMitZahlen\n" +
-    "                .stream()\n" +
-    "                .map(z -&gt; z * z)\n" +
-    "                .reduce(0, Integer::sum);\n" +
+    ".stream()\n" +
+    ".map(z -&gt; z * z)\n" +
+    ".reduce(0, Integer::sum);\n" +
     ".toList(); #distractor\n" +
     ".reduce(1, Integer::sum); #distractor\n" +
     ".filter(z -&gt; z == z*z) #distractor\n" +
@@ -221,6 +222,56 @@ Sortiert die Elemente so, dass der Code alle Einträge quadriert und anschließe
   }); 
 })(); 
 </script>
+
+## Aufgabe 6
+
+Sortiert die Elemente so, dass der Code dem Code auf den Slides entspricht, d.h. nur Werte verarbeitet, die nicht null sind und anschließend die Summe aller Werte bildet.
+Dabei sollen zuvor alle Werte über 100 mit dem Faktor 0.8 multipliziert werden.
+
+<div id="A6-sortableTrash" class="sortable-code"></div> 
+<div id="A6-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="A6-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="A6-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
+(function(){
+  var initial = "public double berechneSumme(List&lt;Optional&lt;Integer&gt;&gt; zahlenListe) {\n" +
+    "return zahlenListe\n" +
+    ".stream()\n" +
+    ".filter(Optional::isPresent)\n" +
+    ".map(Optional::get)\n" +
+    ".map(zahl -&gt; zahl &gt; 100 ? zahl * 0.8 : zahl)\n" +
+    ".reduce(0.0, Double::sum);\n" +
+    "}\n" +
+    ".map(z -&gt; z + s) #distractor\n" +
+    ".toList(); #distractor\n" +
+    "public double berechneSumme(List&lt;Integer&gt; zahlenListe) { #distractor";
+  var parsonsPuzzle = new ParsonsWidget({
+    "sortableId": "A6-sortable",
+    "max_wrong_lines": 10,
+    "grader": ParsonsWidget._graders.LineBasedGrader,
+    "exec_limit": 2500,
+    "can_indent": false,
+    "x_indent": 50,
+    "lang": "en",
+    "show_feedback": true,
+    "trashId": "A6-sortableTrash"
+  });
+  parsonsPuzzle.init(initial);
+  parsonsPuzzle.shuffleLines();
+  $("#A6-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#A6-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
+</script>
+
 
 
 

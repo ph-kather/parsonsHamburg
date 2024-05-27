@@ -15,7 +15,7 @@ Sortiert die Elemente so, dass alle Einträge der ursprünglichen Liste quadrier
 </p> 
 <script type="text/javascript"> 
 (function(){
-  var initial = "List<Integer> neueListeMitZahlen = listeMitZahlen\n" +
+  var initial = "List&lt;Integer&gt; neueListeMitZahlen1 = listeMitZahlen\n" +
     ".stream()\n" +
     ".map(z -> z * z)\n" +
     ".toList();\n" +
@@ -92,7 +92,6 @@ Sortiert die Elemente so, dass alle Einträge entfernt werden, die größer oder
 ## Aufgabe 3
 Sortiert die Elemente so, dass der Code alle Einträge kleiner oder gleich 0 entfernt, und anschlißend eine neue Liste erzeugt, der diese in ihren "Kehrwert" umwandelt (also z -> 1/z).
 
-
 <div id="A3-sortableTrash" class="sortable-code"></div> 
 <div id="A3-sortable" class="sortable-code"></div> 
 <div style="clear:both;"></div> 
@@ -102,15 +101,15 @@ Sortiert die Elemente so, dass der Code alle Einträge kleiner oder gleich 0 ent
 </p> 
 <script type="text/javascript"> 
 (function(){
-  var initial = "List<Double> neueListeMitZahlen3 = listeMitZahlen\n" +
+  var initial = "List&lt;Double&gt; neueListeMitZahlen3 = listeMitZahlen\n" +
     ".stream()\n" +
-    ".filter(z -> z > 0)\n" +
-    ".map(z ->  1.0 / z)\n" +
+    ".filter(z -&gt; z &gt; 0)\n" +
+    ".map(z -&gt;  1.0 / z)\n" +
     ".toList();\n" +
     "  \n" +
-    ".filter(z -> z <= 0) #distractor\n" +
-    "List<Integer> neueListeMitZahlen2 = listeMitZahlen #distractor\n" +
-    ".map(z ->  z != 0) #distractor";
+    ".filter(z -&gt; z &lt;= 0) #distractor\n" +
+    "List&lt;Integer&gt; neueListeMitZahlen3 = listeMitZahlen #distractor\n" +
+    ".map(z -&gt;  z != 0) #distractor";
   var parsonsPuzzle = new ParsonsWidget({
     "sortableId": "A3-sortable",
     "max_wrong_lines": 10,
@@ -134,3 +133,4 @@ Sortiert die Elemente so, dass der Code alle Einträge kleiner oder gleich 0 ent
   }); 
 })(); 
 </script>
+

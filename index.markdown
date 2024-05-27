@@ -1,5 +1,3 @@
-# Parsons Problems
-
 Mit diesen Aufgaben möchte ich die Grundlegende Syntax von funktionalen Elementen in Java einüben.
 Hierbei geht es nur darum, die richtige Reihenfolge der Codeblöcke zu finden.
 Zieht dafür einfach die Elemente aus dem Aufgabenbereich in den Lösungsbereich und prüft Eure Antwort.
